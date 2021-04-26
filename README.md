@@ -30,5 +30,5 @@ Launches the test runner in the interactive watch mode.\
 ## Todo/Nice to do with more time
 
 1. Fix z-index layering issue with toggle component so that white borders are displayed under overlay and text color shows through. There is another experimental feature branch (feature/resize-observer) where I used ResizeObserver with limited success to render the label on top of the overlay. Feel free to check it out.
-2. Fix issue with @testing-library/user-event to trigger arrow key successfully to test radio button accessibility.
+2. Fix broken test with @testing-library/user-event to trigger arrow key successfully to test radio button accessibility.
 3. Add CSS-in-JS library (styled-components) to replace style object code for background.
