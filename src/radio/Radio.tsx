@@ -3,6 +3,7 @@ import React, {
     ChangeEventHandler,
     forwardRef,
     PropsWithChildren,
+    RefObject,
 } from 'react';
 
 /**
@@ -22,6 +23,7 @@ interface RadioProps {
     value: string;
     checked?: boolean;
     onChange?: ChangeEventHandler<HTMLInputElement>;
+    labelRef?: RefObject<HTMLLabelElement>;
 }
 
 /**
@@ -36,6 +38,7 @@ const Radio = forwardRef<HTMLInputElement, PropsWithChildren<RadioProps>>(
             value,
             checked = false,
             onChange,
+            labelRef,
             children,
         }: PropsWithChildren<RadioProps>,
         ref
@@ -44,7 +47,7 @@ const Radio = forwardRef<HTMLInputElement, PropsWithChildren<RadioProps>>(
         const radioClasses = classNames('radio clearfix', { checked });
 
         return (
-            <label className={radioClasses}>
+            <label className={radioClasses} ref={labelRef}>
                 <input
                     type="radio"
                     value={value}
