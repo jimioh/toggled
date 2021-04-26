@@ -24,6 +24,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 1. The Question component is decoupled with a render props function to allow for separate choice of answer controls.
 2. Accessibility is maintained by using a hidden radio button, and the change to the answer status ('The answer is correct/incorrect') will notify screen readers via the aria-live="polite" attribute.
 3. On first component render the first toggle will be focused.
+4. I used flexbox on the toggle labels so that at a smaller screen width the labels would wrap and maintain the same height. This could probably be done in a better way, I'm sure...
 
 ## Todo/Nice to do with more time
 
