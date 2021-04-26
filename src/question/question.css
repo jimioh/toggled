@@ -1,0 +1,95 @@
+/* Using free Muli-like font */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&display=swap');
+
+.Text-Style-2 {
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.38px;
+    text-align: center;
+    color: #e66549;
+}
+
+.Text-Style {
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.38px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.question-container .answers {
+    margin-top: 15px;
+}
+
+.question-container .answers > * {
+    margin-bottom: 10px;
+}
+
+.question-container fieldset {
+    border: none;
+}
+
+.question-container {
+    width: 100%;
+    min-width: 320px;
+    padding: 67px 0 69px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px 6px rgba(167, 196, 220, 0.5);
+    background: linear-gradient(
+        to bottom,
+        hsl(19deg 94% 68% / 70%),
+        hsl(8deg 93% 54% / 69%)
+    );
+    background-color: hsl(8deg 93% 54% / 69%);
+
+    /* Font styles */
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.38px;
+    text-align: center;
+    color: white;
+}
+
+.question-container label {
+    color: white;
+
+    /* transition to transform text colour at same pace as overlay animation */
+    transition: color 200ms ease-in 0ms;
+}
+
+.question-container label.checked {
+    color: #e66549;
+}
+
+.question-container.correct label.checked {
+    color: #00b093;
+}
+
+.question-container.correct {
+    background: linear-gradient(to bottom, #47e4c1, #07cddd);
+}
+
+/* FF only to centre the fieldset legend */
+@-moz-document url-prefix() {
+    fieldset {
+        position: relative;
+    }
+    fieldset > legend {
+        position: absolute;
+        left: 50%;
+        top: -12px; /* depends on font size and border */
+        transform: translate(-50%, 0);
+    }
+}

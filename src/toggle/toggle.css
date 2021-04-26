@@ -1,0 +1,138 @@
+.toggle-container {
+    margin-left: 30px;
+}
+
+.toggle-container label.radio {
+    display: block;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    max-width: 250px;
+    position: relative;
+}
+
+.toggle-container label:last-of-type {
+    transform: translateX(-30px);
+}
+
+/* Using border manipulation to suppor IE Edge, otherwise could use clip-path 
+
+    e.g.
+
+    clip-path: polygon(
+        0 100%,
+        0 0,
+        calc(100% - 33px) 0,
+        calc(100% - 33px) 100%
+    );
+
+    and 
+
+    clip-path: polygon(
+        33px 100%, 
+        33px 0, 
+        100% 0, 
+        100% 100%
+    ); 
+*/
+.toggle-container label:first-of-type span.label {
+    border-width: 1px 0 1px 1px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.toggle-container label:last-of-type span.label {
+    border-width: 1px 1px 1px 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.toggle-container [type='radio'] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.toggle-container [type='radio'] + span.label {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    min-height: 45px;
+    margin: 0;
+    padding: 12px 46px 15px 38px;
+    border-radius: 30px;
+    border: solid 1px #fbfbfb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.toggle-container.disabled [type='radio'] + span.label {
+    cursor: initial;
+}
+
+.toggle-container .radios-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+    position: relative;
+}
+
+.toggle-container .radios-container .overlay-mask {
+    flex: 1;
+}
+
+.toggle-container .radios-container label {
+    color: white;
+    transition: color 200ms ease-in 0ms;
+}
+
+.toggle-container .radios-container label.checked {
+    color: black;
+}
+
+.toggle-container .radio.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.toggle-container .overlay-mask {
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 45px;
+    max-width: 250px;
+    margin: 0;
+    padding: 12px 46px 15px 38px;
+    border-radius: 30px;
+    box-shadow: 0 0 6px 1px rgba(195, 51, 51, 0.5);
+    background-color: rgba(249, 249, 249, 0.5);
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.38px;
+    text-align: center;
+    color: #e66549;
+    transition: all 200ms ease-in 0ms;
+    z-index: 1;
+}
+
+.toggle-container .overlay-mask.option-2-selected {
+    display: inline-block;
+    transform: translate(calc(100% - 30px), 0);
+}
